@@ -3,10 +3,13 @@ from .models import ItemListRequest, ItemListResponse
 from .services import PriceCalculatorService
 
 
+# Define the API router
 router = APIRouter()
 
+# Define a PriceCalculatorService instance
 price_service = PriceCalculatorService()  # Create an instance of the class
 
+#  Define a route for calculating the price of an item list
 @router.post("/calculate_price",
              response_model=ItemListResponse,
              status_code=200,
